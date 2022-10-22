@@ -1,0 +1,12 @@
+{
+  "name": "combination",
+  "version": "1.0.0",
+  "description": "",
+  "main": "combination.js",
+  "scripts": {
+    "start": "nodemon combination.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
