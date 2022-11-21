@@ -5,7 +5,6 @@ class Node {
      this.value = value
      this.isWordEnd = false
      this.children = {}
-     this.unexploredChildrenCount = 0
     }
 }
 
@@ -17,6 +16,8 @@ class Trie {
     insert(word){
         let current = this.root
 
+        word = word.toLowerCase()
+        
         for (let char of word){
 
             if(!(char in current.children)){
@@ -96,18 +97,16 @@ class Trie {
             return
         }
 
+        prefix = prefix.toLowerCase()
+
         for (let char of prefix){
             if(char in current.children){
                 current = current.children[char]
             }else{
                 current = null
-                break
+                console.log([])
+                return []
             }
-        }
-
-        if(!current) {
-            console.log([])
-            return []
         }
 
         temp = prefix.slice(0, -1)
@@ -149,17 +148,21 @@ class Trie {
 
 const trie = new Trie()
 
-trie.insert("cat")
-trie.insert("booking")
-trie.insert('can')
+trie.insert("cat") 
+trie.insert("booking") 
+trie.insert("vanilla") 
+trie.insert('can') 
 trie.insert('cob')
 trie.insert('crept')
-trie.insert('booked')
+trie.insert('booked') 
 trie.insert('coil')
-trie.insert('carnival')
+trie.insert('moon')
+trie.insert('carnival') 
 trie.insert('cobler')
-trie.insert('book')
+trie.insert('hipopotamus')
+trie.insert('candid')
+trie.insert('book') 
 
-trie.startsWith('b')
-trie.findAll()
+trie.startsWith('can')
+// trie.findAll()
 // trie.search('book')
