@@ -61,12 +61,12 @@ function topKElements(array, k) {
   let boundary = k;
   let startIndex = 0;
 
-  while (boundary <= array.length) {
-    buildMinHeap(array, startIndex, boundary);
-    swap(array, startIndex + 1, boundary);
-    ++startIndex;
-    ++boundary;
-  }
+  // while (boundary <= array.length) {
+  buildMinHeap(array, startIndex, boundary);
+  swap(array, startIndex + 1, boundary);
+  // ++startIndex;
+  // ++boundary;
+  // }
 }
 
 topKElements(myArray, k);
